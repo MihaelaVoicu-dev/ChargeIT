@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light "style="background-color: #e3e9fd;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">ChargeIT Application</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="stationsPage.html">Stations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="bookingsPage.html">Bookings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Help</a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <table class="table" id="booking-table">
+        <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">car License</th>
+            <th scope="col">Start Date Time</th>
+            <th scope="col">Name </th>
+            <th scope="col">End Date Time</th>
+            <th scope="col">Station </th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+<div class="modal" id= "createUpdateDialog"  role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <p>Write the informations here!</p>
+                </div>
+                <div class="mb-3">
+                    <label for="bookingIdDialogUpdate" class="col-form-label" > Id</label>
+                    <input id="bookingIdDialogUpdate" type ="number" class="form-control" disabled></input>
+                </div>
+                <div class="mb-3">
+                    <label  class="col-form-label">name</label>
+                    <input id="nameUpdated" type ="text" class="form-control"></input>
+                </div>
+                <div class="mb-3">
+                    <label class="col-form-label">Start Date Time </label>
+                    <input id="startDateTime" type ="datetime-local" class="form-control"></input>
+                </div>
+
+                <div class="mb-3">
+                    <label class="col-form-label">Duration</label>
+                    <input id="duration" type ="number" class="form-control"></input>
+                </div>
+                <label class="col-form-label">Station</label>
+                <div class="dropdown">
+                    <select id="station" onclick="getStation()" >
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="col-form-label">  CarLicense  </label>
+                    <input id="carLicense" type ="text" class="form-control"></input>
+                </div>
+                <div class="modal-footer">
+                    <button style="background-color:#2fff00; border-color:blue; color:rgba(12,2,2,0.89)" type="button" onclick="updateBooking()" class="btn">Submit</button>
+                    <button style="background-color:#ff0015; border-color:blue; color:rgba(12,2,2,0.89)" type="button" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+                </form>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src ="js/bookingController.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>
